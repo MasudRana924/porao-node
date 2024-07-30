@@ -23,7 +23,7 @@ export const createUser = async (req: Request, res: Response): Promise<Response>
         otpExpires: new Date(Date.now() + 3600000),
       };
       const newUser = await createUserAccount(userData as IUserAccount);
-      return res.status(201).json("hello");
+      return res.status(201).json(newUser);
     } catch (error) {
       console.error('Error creating user:', error);
       return res.status(500).json({ message: 'Internal server error' });
