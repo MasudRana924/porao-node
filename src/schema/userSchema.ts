@@ -4,14 +4,12 @@ export interface IUserAccount extends Document {
   userId: string;
   firstName?: string;
   lastName?: string;
+  email?: string;
   password: string;
   phone?: string;
   role?: string;
   gender?: string;
-  type?: string;
   birthdate?: string;
-  amount?: number;
-  point?: number;
   avatarLogo?: string;
   otp?: string;
   otpExpires?: Date;
@@ -51,18 +49,6 @@ const userAccountSchema: Schema = new Schema({
     type: String,
     required: true,
 	unique: true,
-  },
-  type: {
-    type: String,
-    default: "personal",
-  },
-  amount: {
-    type: Number,
-    default: 0,
-  },
-  point: {
-    type: Number,
-    default: 0,
   },
   birthdate: {
     type: String,
